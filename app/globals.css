@@ -24,3 +24,12 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: rgba(255, 214, 165, 0.6);
+  color: #171717;
+}
