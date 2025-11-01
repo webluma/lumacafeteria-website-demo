@@ -73,7 +73,7 @@ export default function Home() {
           {/* Sazonais */}
           {(() => {
             const sazonais = menu.find((s) => s.id === "sazonais");
-            const items = sazonais ? sazonais.items.slice(0, 5) : [];
+            const items = sazonais ? sazonais.items : [];
             return (
               <section className="scroll-mt-24 py-10">
                 <SectionHeader title="Bebidas Sazonais" eyebrow="Seleção do momento" href="/produtos" />

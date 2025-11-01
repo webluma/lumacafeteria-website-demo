@@ -41,7 +41,7 @@ export function Modal({ open, onClose, title, children }: PropsWithChildren<Moda
     >
       {/* Backdrop */}
       <div
-        className="absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity"
+        className="absolute inset-0 bg-black/50 backdrop-blur-md transition-opacity"
         onClick={onClose}
       />
       {/* Panel wrapper */}
@@ -49,24 +49,24 @@ export function Modal({ open, onClose, title, children }: PropsWithChildren<Moda
         <div
           ref={dialogRef}
           tabIndex={-1}
-          className="w-full max-w-2xl overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-2xl outline-none"
+          className="w-full max-w-2xl max-h-[90vh] rounded-3xl border border-zinc-200/80 bg-white shadow-2xl outline-none overflow-hidden flex flex-col md:max-w-3xl"
         >
           {/* Header */}
-          <div className="flex items-start justify-between gap-4 border-b border-zinc-200 px-6 py-5">
-            <h3 id="modal-title" className="text-lg font-semibold tracking-tight text-zinc-900">
+          <div className="sticky top-0 z-10 flex items-center justify-between gap-3 border-b border-zinc-200/70 bg-white px-6 py-3 sm:px-8">
+            <h3 id="modal-title" className="text-lg font-semibold tracking-tight text-zinc-900 sm:text-xl">
               {title}
             </h3>
             <button
               type="button"
               onClick={onClose}
-              className="rounded-md p-2 text-zinc-500 transition hover:bg-zinc-100 hover:text-zinc-700 focus:outline-none focus:ring-2 focus:ring-zinc-200"
-              aria-label="Fechar"
+              className="shrink-0 rounded-xl p-1.5 text-zinc-400 transition hover:bg-zinc-100 hover:text-zinc-700 focus:outline-none focus:ring-2 focus:ring-zinc-200/50"
+              aria-label="Fechar modal"
             >
-              <span aria-hidden>✕</span>
+              <span aria-hidden className="text-lg leading-none">×</span>
             </button>
           </div>
           {/* Body */}
-          <div className="px-6 py-5">
+          <div className="px-6 py-6 sm:px-8 sm:py-7 flex-1 min-h-0 overflow-hidden">
             {children}
           </div>
         </div>

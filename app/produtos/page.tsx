@@ -57,12 +57,13 @@ export default function ProdutosPage() {
     <div className="min-h-screen bg-white text-zinc-900">
       <Header />
       <main>
-        <Container className="pb-24 pt-10">
-          <div className="mb-6 flex flex-col gap-3 md:mb-8 md:flex-row md:items-end md:justify-between">
+        <Container className="pb-24 pt-12">
+          <div className="mb-8 flex flex-col gap-4 md:mb-10 md:flex-row md:items-end md:justify-between">
             <div>
-              <h1 className="text-3xl font-semibold tracking-tight">Produtos</h1>
-              <p className="mt-1 max-w-2xl text-sm text-zinc-700">Veja o que temos disponível na loja. Não realizamos vendas online.</p>
-              <p className="mt-2 text-xs text-zinc-500">Exibindo {visibleCount} de {totalCount} itens</p>
+              <div className="mb-1 text-xs font-medium uppercase tracking-widest text-zinc-500">Catálogo</div>
+              <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">Produtos</h1>
+              <p className="mt-3 max-w-2xl text-sm leading-6 text-zinc-700">Veja o que temos disponível na loja. Não realizamos vendas online.</p>
+              <p className="mt-2 text-xs text-zinc-500">{visibleCount} de {totalCount} itens</p>
             </div>
             <div className="flex w-full flex-col gap-2 sm:flex-row sm:items-center sm:justify-end">
               <div className="relative w-full sm:w-72">
@@ -70,13 +71,13 @@ export default function ProdutosPage() {
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   placeholder="Buscar por nome, descrição ou tag..."
-                  className="w-full rounded-xl border border-zinc-200 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 shadow-sm outline-none transition focus:border-zinc-300 focus:ring-2 focus:ring-zinc-200"
+                  className="w-full rounded-xl border border-zinc-200/80 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 shadow-sm outline-none transition focus:border-zinc-300 focus:ring-2 focus:ring-zinc-200/50"
                 />
               </div>
               <select
                 value={sort}
                 onChange={(e) => setSort(e.target.value as SortOption)}
-                className="w-full rounded-xl border border-zinc-200 bg-white px-3 py-2.5 text-sm text-zinc-900 shadow-sm outline-none transition focus:border-zinc-300 focus:ring-2 focus:ring-zinc-200 sm:w-56"
+                className="w-full rounded-xl border border-zinc-200/80 bg-white px-3 py-2.5 text-sm text-zinc-900 shadow-sm outline-none transition focus:border-zinc-300 focus:ring-2 focus:ring-zinc-200/50 sm:w-56"
               >
                 <option value="relevance">Ordenar: Relevância</option>
                 <option value="price-asc">Preço: menor → maior</option>
@@ -85,17 +86,17 @@ export default function ProdutosPage() {
             </div>
           </div>
 
-          <div className="sticky top-14 z-10 -mx-2 mb-6 overflow-x-auto border-b border-zinc-200 bg-white/80 px-2 backdrop-blur supports-[backdrop-filter]:bg-white/60 md:top-16 md:mb-8">
-            <div className="flex gap-2 py-2">
+          <div className="sticky top-14 z-10 -mx-2 mb-8 overflow-x-auto border-b border-zinc-200/70 bg-white/90 px-2 pb-1 backdrop-blur-md supports-[backdrop-filter]:bg-white/70 md:top-16 md:mb-10">
+            <div className="flex gap-2 py-3">
               {categories.map(cat => (
                 <button
                   key={cat.id}
                   onClick={() => setActiveCategory(cat.id)}
                   className={
-                    "whitespace-nowrap rounded-full border px-3 py-1.5 text-sm transition " +
+                    "whitespace-nowrap rounded-full border px-4 py-1.5 text-sm font-medium transition " +
                     (activeCategory === cat.id
                       ? "border-zinc-900 bg-zinc-900 text-white shadow-sm"
-                      : "border-zinc-200 bg-white text-zinc-700 hover:bg-zinc-50")
+                      : "border-zinc-200/80 bg-white text-zinc-700 hover:bg-zinc-50 hover:border-zinc-300")
                   }
                 >
                   {cat.title}
@@ -105,25 +106,25 @@ export default function ProdutosPage() {
           </div>
 
           {visibleSections.map((section) => (
-            <section key={section.id} id={section.id} className="scroll-mt-24 py-6 md:py-8">
-              <div className="mb-4 flex items-center justify-between md:mb-6">
-                <h2 className="text-lg font-semibold tracking-tight md:text-2xl">{section.title}</h2>
-                <span className="text-xs text-zinc-500">{section.items.length} itens</span>
+            <section key={section.id} id={section.id} className="scroll-mt-24 py-8 md:py-10">
+              <div className="mb-6 flex items-center justify-between md:mb-8">
+                <h2 className="text-xl font-semibold tracking-tight md:text-2xl">{section.title}</h2>
+                <span className="text-xs font-medium text-zinc-500">{section.items.length} itens</span>
               </div>
               {section.items.length > 0 ? (
-                <div className="grid grid-cols-1 items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="grid grid-cols-1 items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3">
                   {section.items.map((item) => (
                     <ProductCard key={item.id} item={item} />
                   ))}
                 </div>
               ) : (
-                <div className="rounded-xl border border-zinc-200 bg-white p-6 text-center text-sm text-zinc-600">Nenhum item encontrado nesta categoria.</div>
+                <div className="rounded-xl border border-zinc-200/80 bg-zinc-50/50 p-8 text-center text-sm text-zinc-600">Nenhum item encontrado nesta categoria.</div>
               )}
             </section>
           ))}
 
           {visibleCount === 0 && (
-            <div className="mt-10 rounded-2xl border border-zinc-200 bg-white p-10 text-center">
+            <div className="mt-12 rounded-2xl border border-zinc-200/80 bg-zinc-50/50 p-12 text-center">
               <p className="text-sm text-zinc-700">Nada encontrado para sua busca.</p>
               <button
                 onClick={() => {
@@ -131,7 +132,7 @@ export default function ProdutosPage() {
                   setActiveCategory("todos");
                   setSort("relevance");
                 }}
-                className="mt-4 inline-flex items-center justify-center rounded-xl border border-zinc-200 bg-white px-4 py-2 text-sm font-medium text-zinc-900 shadow-sm transition hover:bg-zinc-50"
+                className="mt-5 inline-flex items-center justify-center rounded-xl border border-zinc-200/80 bg-white px-5 py-2.5 text-sm font-medium text-zinc-900 shadow-sm transition hover:bg-zinc-50 hover:border-zinc-300"
               >
                 Limpar filtros
               </button>
