@@ -10,9 +10,9 @@ export default function EnderecoPage() {
         <Container className="pb-20 pt-12">
           <h1 className="mb-2 text-3xl font-semibold tracking-tight">Endereço</h1>
           <p className="mb-6 max-w-2xl text-zinc-700">
-            Venha nos visitar. Atendimento de segunda a sábado.
+            Venha nos visitar. Atendimento de segunda a domingo.
           </p>
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-stretch">
             <div className="space-y-3 text-sm">
               <div>
                 <div className="text-zinc-500">Loja</div>
@@ -20,20 +20,40 @@ export default function EnderecoPage() {
               </div>
               <div>
                 <div className="text-zinc-500">Endereço</div>
-                <div className="font-medium">Rua Exemplo, 123 - Centro, Curitiba - PR</div>
-              </div>
-              <div>
-                <div className="text-zinc-500">Horários</div>
-                <div className="font-medium">Seg a Sex 8h–19h, Sáb 9h–18h</div>
+                <div className="font-medium">Rua Exemplo, 123 - Centro</div>
+                <div className="font-medium">Curitiba - PR, CEP 80000-000</div>
               </div>
               <div>
                 <div className="text-zinc-500">Contato</div>
-                <div className="font-medium">WhatsApp (41) 0000-0000 • contato@luma.cafe</div>
+                <div className="font-medium">
+                  <a href="mailto:email@exemplo.com.br" className="hover:text-zinc-900 hover:underline underline-offset-4">
+                    email@exemplo.com.br
+                  </a>
+                </div>
+                <div className="font-medium">
+                  <a href="tel:+5541000000000" className="hover:text-zinc-900 hover:underline underline-offset-4">
+                    (41) 00000-0000
+                  </a>
+                </div>
+              </div>
+              <div>
+                <div className="text-zinc-500">Horários</div>
+                <div className="font-medium">Segunda a Sexta: 8h – 19h</div>
+                <div className="font-medium">Sábado e Domingo: 10h – 18h</div>
               </div>
             </div>
-            <div>
-              <div className="aspect-[4/3] w-full overflow-hidden rounded-2xl border border-zinc-200/80 bg-zinc-100" aria-label="Mapa">
-                {/* Substituir por iframe do mapa, se desejar */}
+            <div className="flex">
+              <div className="relative w-full h-full overflow-hidden rounded-2xl border border-zinc-200/80 bg-zinc-100" aria-label="Mapa">
+                <iframe
+                  src="https://maps.google.com/maps?q=Rua+Exemplo,+123+-+Centro,+Curitiba+-+PR&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Localização da Luma Cafeteria"
+                />
               </div>
             </div>
           </div>

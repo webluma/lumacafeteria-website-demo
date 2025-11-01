@@ -50,7 +50,6 @@ export default function ProdutosPage() {
     return sorted;
   }, [activeCategory, query, sort]);
 
-  const totalCount = useMemo(() => menu.reduce((acc, s) => acc + s.items.length, 0), []);
   const visibleCount = useMemo(() => visibleSections.reduce((acc, s) => acc + s.items.length, 0), [visibleSections]);
 
   return (
@@ -63,7 +62,6 @@ export default function ProdutosPage() {
               <div className="mb-1 text-xs font-medium uppercase tracking-widest text-zinc-500">Catálogo</div>
               <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">Produtos</h1>
               <p className="mt-3 max-w-2xl text-sm leading-6 text-zinc-700">Veja o que temos disponível na loja. Não realizamos vendas online.</p>
-              <p className="mt-2 text-xs text-zinc-500">{visibleCount} de {totalCount} itens</p>
             </div>
             <div className="flex w-full flex-col gap-2 sm:flex-row sm:items-center sm:justify-end">
               <div className="relative w-full sm:w-72">

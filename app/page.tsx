@@ -38,7 +38,7 @@ export default function Home() {
                 </p>
                 <div className="mt-6 flex flex-wrap gap-3">
                   <a href="/produtos"><Button>Ver produtos</Button></a>
-                  <a href="/historia"><Button variant="outline">Nossa história</Button></a>
+                  <a href="/historia"><Button variant="outline" className="bg-white hover:bg-white/90">Nossa história</Button></a>
                 </div>
               </div>
             </Container>
