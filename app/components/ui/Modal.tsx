@@ -49,7 +49,7 @@ export function Modal({ open, onClose, title, children }: PropsWithChildren<Moda
         <div
           ref={dialogRef}
           tabIndex={-1}
-          className="w-full max-w-2xl max-h-[90vh] rounded-3xl border border-zinc-200/80 bg-white shadow-2xl outline-none overflow-hidden flex flex-col md:max-w-3xl"
+          className="w-full max-w-2xl max-h-[90vh] rounded-2xl border border-zinc-200/80 bg-white shadow-2xl outline-none overflow-hidden flex flex-col sm:rounded-3xl md:max-w-3xl"
         >
           {/* Header */}
           <div className="sticky top-0 z-10 flex items-center justify-between gap-3 border-b border-zinc-200/70 bg-white px-6 py-3 sm:px-8">

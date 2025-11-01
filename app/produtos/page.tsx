@@ -56,12 +56,12 @@ export default function ProdutosPage() {
     <div className="min-h-screen bg-white text-zinc-900">
       <Header />
       <main>
-        <Container className="pb-24 pt-12">
-          <div className="mb-8 flex flex-col gap-4 md:mb-10 md:flex-row md:items-end md:justify-between">
+        <Container className="pb-24 pt-8 sm:pt-12">
+          <div className="mb-6 flex flex-col gap-4 sm:mb-8 md:mb-10 md:flex-row md:items-end md:justify-between">
             <div>
               <div className="mb-1 text-xs font-medium uppercase tracking-widest text-zinc-500">Catálogo</div>
-              <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">Produtos</h1>
-              <p className="mt-3 max-w-2xl text-sm leading-6 text-zinc-700">Veja o que temos disponível na loja. Não realizamos vendas online.</p>
+              <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl md:text-4xl">Produtos</h1>
+              <p className="mt-2 max-w-2xl text-sm leading-6 text-zinc-700 sm:mt-3">Veja o que temos disponível na loja. Não realizamos vendas online.</p>
             </div>
             <div className="flex w-full flex-col gap-2 sm:flex-row sm:items-center sm:justify-end">
               <div className="relative w-full sm:w-72">
@@ -84,14 +84,14 @@ export default function ProdutosPage() {
             </div>
           </div>
 
-          <div className="sticky top-14 z-10 -mx-2 mb-8 overflow-x-auto border-b border-zinc-200/70 bg-white/90 px-2 pb-1 backdrop-blur-md supports-[backdrop-filter]:bg-white/70 md:top-16 md:mb-10">
+          <div className="sticky top-[64px] z-10 -mx-2 mb-6 overflow-x-auto border-b border-zinc-200/70 bg-white/90 px-2 pb-1 backdrop-blur-md supports-[backdrop-filter]:bg-white/70 sm:top-[72px] sm:mb-8 md:top-16 md:mb-10">
             <div className="flex gap-2 py-3">
               {categories.map(cat => (
                 <button
                   key={cat.id}
                   onClick={() => setActiveCategory(cat.id)}
                   className={
-                    "whitespace-nowrap rounded-full border px-4 py-1.5 text-sm font-medium transition " +
+                    "whitespace-nowrap rounded-full border px-3 py-1.5 text-xs font-medium transition sm:px-4 sm:text-sm " +
                     (activeCategory === cat.id
                       ? "border-zinc-900 bg-zinc-900 text-white shadow-sm"
                       : "border-zinc-200/80 bg-white text-zinc-700 hover:bg-zinc-50 hover:border-zinc-300")

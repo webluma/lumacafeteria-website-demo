@@ -14,7 +14,7 @@ export default function Home() {
       <Header />
 
       <section className="relative border-b border-zinc-200/70">
-        <div className="relative mx-0 min-h-[70vh] w-full overflow-hidden">
+        <div className="relative mx-0 min-h-[60vh] w-full overflow-hidden sm:min-h-[70vh]">
           <Image
             src="/images/hero.jpg"
             alt="Ambiente da cafeteria"
@@ -25,18 +25,18 @@ export default function Home() {
             className="object-cover"
             style={{ objectPosition: "center 35%" }}
           />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent sm:from-black/40 sm:via-black/10" />
 
-          <div className="absolute inset-0 flex items-end md:items-center">
-            <Container className="pb-10 pt-24">
+          <div className="absolute inset-0 flex items-end sm:items-center">
+            <Container className="pb-8 pt-20 sm:pb-10 sm:pt-24">
               <div className="max-w-2xl text-white drop-shadow-md">
-                <h1 className="text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
+                <h1 className="text-3xl font-semibold leading-tight tracking-tight sm:text-4xl md:text-5xl">
                   Café especial, simplicidade impecável.
                 </h1>
-                <p className="mt-4 max-w-xl text-base leading-7 text-white/90">
+                <p className="mt-3 max-w-xl text-sm leading-7 text-white/90 sm:mt-4 sm:text-base">
                   Curadoria de bebidas e comidinhas para o dia fluir leve e gostoso.
                 </p>
-                <div className="mt-6 flex flex-wrap gap-3">
+                <div className="mt-5 flex flex-wrap gap-3 sm:mt-6">
                   <a href="/produtos"><Button>Ver produtos</Button></a>
                   <a href="/historia"><Button variant="outline" className="bg-white hover:bg-white/90">Nossa história</Button></a>
                 </div>
@@ -57,11 +57,11 @@ export default function Home() {
               ...(frios ? frios.items.slice(0, 2) : []),
             ];
             return (
-              <section className="scroll-mt-24 py-10">
+              <section className="scroll-mt-24 py-8 sm:py-10">
                 <SectionHeader title="Cafés Quentes e Frios" eyebrow="Veja nosso cardápio" href="/produtos" />
                 <Carousel ariaLabel="Bebidas quentes e frias">
                   {items.map((item) => (
-                    <div key={item.id} className="h-[340px] w-[280px] shrink-0">
+                    <div key={item.id} className="h-[340px] w-[260px] shrink-0 sm:w-[280px]">
                       <ProductCard item={item} />
                     </div>
                   ))}
@@ -75,11 +75,11 @@ export default function Home() {
             const sazonais = menu.find((s) => s.id === "sazonais");
             const items = sazonais ? sazonais.items : [];
             return (
-              <section className="scroll-mt-24 py-10">
+              <section className="scroll-mt-24 py-8 sm:py-10">
                 <SectionHeader title="Bebidas Sazonais" eyebrow="Seleção do momento" href="/produtos" />
                 <Carousel ariaLabel="Bebidas sazonais">
                   {items.map((item) => (
-                    <div key={item.id} className="h-[340px] w-[280px] shrink-0">
+                    <div key={item.id} className="h-[340px] w-[260px] shrink-0 sm:w-[280px]">
                       <ProductCard item={item} />
                     </div>
                   ))}
@@ -88,7 +88,7 @@ export default function Home() {
             );
           })()}
 
-          <section className="scroll-mt-24 py-16">
+          <section className="scroll-mt-24 py-12 sm:py-16">
             <div className="mb-8">
               <div className="mb-2 text-xs font-medium uppercase tracking-widest text-zinc-500">Origem e cultura</div>
               <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">Café no Brasil</h2>

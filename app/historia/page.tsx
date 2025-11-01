@@ -10,11 +10,11 @@ export default function HistoriaPage() {
       <main>
         {/* Intro sem divisória */}
         <section>
-          <Container className="pb-8 pt-16 md:py-16">
+          <Container className="pb-8 pt-12 sm:pt-16 md:py-16">
             <div className="max-w-3xl">
               <div className="mb-2 text-xs font-medium uppercase tracking-widest text-zinc-500">Sobre nós</div>
-              <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">Nossa história</h1>
-              <p className="mt-5 text-zinc-700">
+              <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl md:text-4xl">Nossa história</h1>
+              <p className="mt-4 text-zinc-700 sm:mt-5">
                 A Luma nasceu da vontade de servir café especial com simplicidade impecável. Acreditamos
                 que o extraordinário está no bem-feito: ingredientes de qualidade, preparo preciso e um
                 ambiente que convida a desacelerar.
@@ -26,8 +26,8 @@ export default function HistoriaPage() {
         {/* Conteúdo principal */}
 
         <section>
-          <Container className="py-12 md:py-16">
-            <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-12">
+          <Container className="py-8 sm:py-12 md:py-16">
+            <div className="grid grid-cols-1 items-center gap-6 sm:gap-8 md:grid-cols-12">
               <div className="relative md:col-span-7">
                 <Image
                   src="/images/ambiente.jpg"
@@ -37,16 +37,16 @@ export default function HistoriaPage() {
                   priority
                   quality={90}
                   sizes="100vw"
-                  className="h-auto w-full rounded-tl-[96px] md:rounded-tl-[140px]"
+                  className="h-auto w-full rounded-tl-[64px] sm:rounded-tl-[96px] md:rounded-tl-[140px]"
                 />
-                <div className="relative -mt-6 ml-auto hidden w-2/3 overflow-hidden rounded-tl-[96px] border border-zinc-200/70 shadow-sm sm:block md:rounded-tl-[140px]">
-                  <div className="relative h-[220px] w-full">
-                    <Image src="/images/late2.jpg" alt="Latte art no balcão" fill className="object-cover" sizes="(min-width: 1024px) 460px, 50vw" />
+                <div className="relative -mt-4 ml-auto hidden w-2/3 overflow-hidden rounded-tl-[64px] border border-zinc-200/70 shadow-sm sm:-mt-6 sm:block sm:rounded-tl-[96px] md:rounded-tl-[140px]">
+                  <div className="relative h-[180px] w-full sm:h-[220px]">
+                    <Image src="/images/late2.jpg" alt="Latte art no balcão" fill className="object-cover" sizes="(min-width: 1024px) 460px, (min-width: 640px) 50vw, 100vw" />
                   </div>
                 </div>
               </div>
               <div className="md:col-span-5">
-                <div className="space-y-5 text-zinc-700">
+                <div className="space-y-4 text-zinc-700 sm:space-y-5">
                   <p>
                     Valorizamos produtores locais, métodos consistentes e uma curadoria que muda com as
                     estações. Cada xícara revela a identidade do grão e o cuidado de quem torra e prepara.
